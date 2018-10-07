@@ -138,7 +138,6 @@ namespace gpx
       }
     }
 
-    std::cout << isFinal << std::endl;
     ok = (XML_Parse(_parser, data, length, isFinal) != XML_STATUS_ERROR);
 
     if (!ok)
