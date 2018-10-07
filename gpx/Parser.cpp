@@ -113,7 +113,7 @@ namespace gpx
   {
     if (_current != 0)
     {
-      _current->setValue(value);
+      _current->appendValue(value);
     }
     else if (_report != 0)
     {
@@ -138,6 +138,7 @@ namespace gpx
       }
     }
 
+    std::cout << isFinal << std::endl;
     ok = (XML_Parse(_parser, data, length, isFinal) != XML_STATUS_ERROR);
 
     if (!ok)
@@ -245,7 +246,7 @@ namespace gpx
     Parser *self = static_cast<Parser*>(userData);
     
     string data(s, len);
-    
+
     self->value(data);
   }
 
